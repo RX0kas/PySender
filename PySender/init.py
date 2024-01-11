@@ -8,4 +8,5 @@ execute("pip install pyClamd")
 print("\033[92mInstallation Done\033[0m")
 
 print("\033[92mAll Installation Done")
-print("\033[92mStarting for the first time\033[0m")
+print("\033[34mStarting for the first time...\033[0m")
+execute("python PySender.py")

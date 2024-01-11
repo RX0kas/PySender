@@ -21,6 +21,9 @@ def fileVerification(fileName):
     # Vérifier le résultat
     if resultat[fileName] == 'OK':
         print(f"The file {fileName} is clear.")
+        return resultat[fileName]
     else:
         print(f"The file {fileName} have a malware : {resultat[fileName]}")
+        return resultat[fileName]
+
 

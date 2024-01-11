@@ -1,4 +1,5 @@
 import socket
+from verification import fileVerification
 
 
 def Find_open_port(InitialPort=58388, nbrTry=10):
@@ -73,6 +74,8 @@ def getFile(FileName, port):
         while donnees_recues:
             file.write(donnees_recues)
             donnees_recues = connexion.recv(1024)
+    
+    fileVerification(FileName)
 
     # Fermer la connexion
     connexion.close()
