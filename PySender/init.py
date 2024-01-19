@@ -1,4 +1,3 @@
-from calendar import FRIDAY
 from os import system as execute
 
 print("\033[34mInitiation of the installation of the lib")
