@@ -1,7 +1,8 @@
 import os
-from tkinter import ttk,Tk
+from tkinter import ttk,Tk,filedialog
 from logger import Logger
 import sys
+import Send
 
 
 
@@ -28,8 +29,13 @@ def start():
 
     frm = ttk.Frame(root, padding=10)
     frm.grid()
-    ttk.Label(frm, text="PySender").grid(column=0, row=0)
-    ttk.Button(frm, text="Quit", command=root.destroy).grid(column=1, row=0)
+    
+    #########
+    ip = 0 # a remplir
+    port = 0 # a remplir
+    Path = "" # a remplir
+    ttk.Button(root,text="Send",command=Send.sendFile(IPServeur=ip,PortServeur=port,FilePath=Path)) # Bouton pour envoyer
+
     root.mainloop()
 
 

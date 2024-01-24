@@ -1,5 +1,49 @@
 import socket
 from verification import fileVerification
+from PySender import LOGGER
+
+def get_publicIP():
+    """Obtenir l'adresse IP publique de l'ordinateur."""
+    try:
+        # Utiliser un service de recherche d'adresse IP publique
+        ip_publique = socket.gethostbyname(socket.gethostname())
+        return ip_publique
+    except socket.error as e:
+        LOGGER.error("Error while getting the public IP:")
+        LOGGER.error(e)
+        return -1
+
+def create_code(ip,port,file_type):
+    # code_file ip code_port port (si code_port est 1)
+    # Si le code_port est 0 alors il s'agit du port pars defaut (58388)
+    # Si le code_port est 1 alors le port à changer, donc le nombre après ce 1 est le port
+    ##
+    # Si le code_file est 0 alors il s'agit d'un seul fichier
+    # Si le code_file est 1 alors il s'agit d'un zip
+    # Si le code_file est 2 alors il s'agit d'une string  
+    # Si le code_file est -1 alors il y a une erreur
+    
+    #######
+    if file_type == "zip":
+        code_file = 1
+    elif file_type == "str":
+        code_file = 2
+    elif file_type == "file":
+        code_file = 0
+    else:
+        code_file = -1
+        LOGGER.error("Code Invalid: The code_file value isn't zip/str/file")
+        raise NameError("Code Invalid: The code_file value isn't zip/str/file")
+    ########
+    if port == 58338:
+        code_port = 0
+    else:
+        port = 1
+    
+    
+    final_code = None
+    return final_code
+
 
 
 def Find_open_port(InitialPort=58388, nbrTry=10):

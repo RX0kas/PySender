@@ -1,4 +1,5 @@
 import socket
+from tkinter import filedialog
 
 
 def sendSTR(IPServeur, PortServeur, Data):
@@ -15,7 +16,7 @@ def sendSTR(IPServeur, PortServeur, Data):
 
 
 # La taille du tampon est le nombre d'octets (ou de bytes) lus ou écrits à chaque itération lors de la lecture ou de l'écriture d'un fichier. | ChatGPT
-def sendFile(IPServeur, PortServeur, FilePath, TamponSize=1024):
+def sendFile(IPServeur, PortServeur, FilePath=filedialog.askdirectory(), TamponSize=1024):
     # Créer un objet socket pour le client
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 

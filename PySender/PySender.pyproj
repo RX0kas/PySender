@@ -21,6 +21,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="code_IP.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Custom_Error.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="init.py">
       <SubType>Code</SubType>
     </Compile>
